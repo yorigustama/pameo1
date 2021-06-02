@@ -69,9 +69,8 @@
         <div class="main-nav d-none d-lg-block">
           <nav class="site-navigation text-right text-md-center" role="navigation">
             <ul class="site-menu js-clone-nav d-none d-lg-block">
-              <li><a href="pembeli.php">Home</a></li>
-              <li><a href="reques_design.php">Reques Desain</a> </li>
-              <li><a href="table_design.php">Table Desain</a> </li>
+              <li><a href="desainer.php">Home</a></li>
+              <li><a href="table_desain.php">Table Desain</a> </li>
 
 
               <!-- <li><a href="evaluasi_makanan_data.php">Evaluasi Makan</a></li>

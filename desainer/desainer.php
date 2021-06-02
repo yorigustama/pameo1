@@ -19,6 +19,7 @@ $nama = $_SESSION["nama"];
 $email = $_SESSION["email"];
 
 ?>
+<?php include '../desainer/header.php'; ?>
 <!DOCTYPE html>
 <html>
 
