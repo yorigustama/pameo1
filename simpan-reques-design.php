@@ -3,27 +3,27 @@
 include "koneksi.php";
 
 //menerima nilai dari kiriman form pendaftaran
-$nama_desain = $_POST["nama_desain"];
-$jenis_desain = $_POST["jenis_desain"];
+$nama_design = $_POST["nama_design"];
+$jenis_design = $_POST["jenis_design"];
 $batas_waktu = $_POST["batas_waktu"];
-$jumlah_desain = $_POST["jumlah_desain"];
+$jumlah_design = $_POST["jumlah_design"];
 $catatan_khusus = $_POST["catatan_khusus"];
-$jenis_desain = $_POST["waktu_reques"];
+$jenis_design = $_POST["waktu_reques"];
 $materi_pendukung = $_POST["materi_pendukung"];
 
 
-//Query input menginput data kedalam tabel users
-$sql = "insert into users (nama_desain,jenis_desain,batas_waktu,jumlah_desain,catatan_khusus,waktu_reques,materi_pendukung) values
-		('$nama_desain','$jenis_desain','$batas_waktu','$jumlah_desain','$catatan_khusus,'$waktu_reques','$materi_pendukung')";
+//Query input menginput data kedalam tabel reques_design
+$sql = "insert into reques_design (nama_design,jenis_design,batas_waktu,jumlah_design,catatan_khusus,waktu_reques,materi_pendukung) values
+		('$nama_design','$jenis_design','$batas_waktu','$jumlah_design','$catatan_khusus,'$waktu_reques','$materi_pendukung')";
 
 //Mengeksekusi/menjalankan query diatas	
 $hasil = mysqli_query($kon, $sql);
 
 //Kondisi apakah berhasil atau tidak
 if ($hasil) {
-    echo "Berhasil simpan data users";
+    echo "Berhasil simpan data reques_design";
     exit;
 } else {
-    echo "Gagal simpan data users";
+    echo "Gagal simpan data reques_design";
     exit;
 }
