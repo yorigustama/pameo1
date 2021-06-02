@@ -41,11 +41,11 @@
 
 
                 if ($_SESSION["level"] = $row["level"] == 1) {
-                    header("Location:admin.php");
+                    header("Location:admin/admin.php");
                 } else if ($_SESSION["level"] = $row["level"] == 2) {
-                    header("Location:desainer.php");
+                    header("Location:desainer/desainer.php");
                 } else if ($_SESSION["level"] = $row["level"] == 3) {
-                    header("Location:pembeli.php");
+                    header("Location:pembeli/pembeli.php");
                 }
             } else {
                 echo "<div class='alert alert-danger'>
