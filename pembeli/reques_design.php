@@ -33,40 +33,7 @@ $email = $_SESSION["email"];
 
         <hr>
 
-        <?php
-        if (isset($_POST['submit'])) {
-            $nama_design    = $_POST['nama_design'];
-            $jenis_design    = $_POST['jenis_design'];
-            $batas_waktu        = $_POST['batas_waktu'];
-            $jumlah_design         = $_POST['jumlah_design'];
-            $catatan_khusus         = $_POST['catatan_khusus'];
-            $waktu_reques         = $_POST['waktu_reques'];
-            $materi_pendukung         = $_POST['materi_pendukung'];
-
-            $cek = mysqli_query($kon, "SELECT * FROM reques_design  WHERE nama_design='$nama_design'") or die(mysqli_error($kon));
-
-            if (mysqli_num_rows($cek) == 0) {
-                $sql = mysqli_query($kon, "INSERT INTO reques_design (nama_design, jenis_design, batas_waktu, jumlah_design, catatan_khusus, waktu_reques, materi_pendukung) VALUES('$nama_design', '$jenis_design', '$batas_waktu', '$jumlah_design', '$catatan_khusus', '$waktu_reques', '$materi_pendukung')") or die(mysqli_error($kon));
-
-
-
-                if ($sql) {
-                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>BERHASIL DITAMBAHKAN!</strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>';
-                } else {
-                    echo '<div class="alert alert-warning">Gagal melakukan proses tambah data.</div>';
-                }
-            } else {
-                echo '<div class="alert alert-warning">Gagal, Nama sudah terdaftar.</div>';
-            }
-        }
-        ?>
-
-        <form action="pembeli.php" method="post">
+        <form action="proses_img.php?action=tambah" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nama_design">Nama design</label>
                 <input type="text" class="form-control" id="nama_design" placeholder="Enter nama design" name="nama_design">
@@ -93,17 +60,17 @@ $email = $_SESSION["email"];
                                                                                         echo $tgl; ?>" name="waktu_reques">
             </div>
             <div class="form-group">
-                <label for="materi_pendukung">Materi Pendukung</label>
-                <input type="file" class="form-control" id="materi_pendukung" placeholder="Enter angka" name="materi_pendukung">
+                <label for="waktu_reques">Upload Gambar</label>
+                <input name="MAX_FILE_SIZE" value="50000000" type="hidden" />
+
+                <input name="nama" size="37" type="file" formenctype="multipart/form-data">
+
             </div>
-
-
-
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">&nbsp;</label>
                 <div class="col-sm-10">
                     <input type="submit" name="submit" class="btn btn-primary" value="SIMPAN">
-                    <a href="reques_design _data.php" class="btn btn-warning">KEMBALI</a>
+                    <a href="reques_design_data.php" class="btn btn-warning">KEMBALI</a>
                 </div>
             </div>
 
