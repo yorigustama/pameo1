@@ -1,12 +1,12 @@
 <?php
 include '../koneksi.php';
 if ($_GET['action'] == 'edit' || $_GET['action'] == 'tambah') {
-	$path = "images/"; //folder buat menyimpan file gambar
+	$path = "../images/"; //folderbuat menyimpan file gambar
 	$file = $_FILES['materi_pendukung']['name'];
 	$temp = $_FILES['materi_pendukung']['tmp_name'];
 	if ($_GET['action'] == 'edit') {
 		$d = mysqli_fetch_array(mysqli_query($kon, "select * from reques_design where jenis='img' and id='{$_GET['id']}'"));
-		unlink("images/" . $d['materi_pendukung']);
+		unlink("../images/" . $d['materi_pendukung']);
 	}
 	move_uploaded_file($temp, $path . $file);
 }

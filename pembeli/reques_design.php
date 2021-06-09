@@ -33,7 +33,7 @@ $email = $_SESSION["email"];
 
         <hr>
 
-        <form action="proses_img.php?action=tambah" method="post" enctype="multipart/form-data">
+        <form action="../pembeli/proses_img.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nama_design">Nama design</label>
                 <input type="text" class="form-control" id="nama_design" placeholder="Enter nama design" name="nama_design">
@@ -60,11 +60,8 @@ $email = $_SESSION["email"];
                                                                                         echo $tgl; ?>" name="waktu_reques">
             </div>
             <div class="form-group">
-                <label for="waktu_reques">Upload Gambar</label>
                 <input name="MAX_FILE_SIZE" value="50000000" type="hidden" />
-
-                <input name="nama" size="37" type="file" formenctype="multipart/form-data">
-
+                <input name="materi_pendukung" size="37" type="file" formenctype="multipart/form-data">
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">&nbsp;</label>
